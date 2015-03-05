@@ -1,0 +1,73 @@
+<ul class="breadcrumb">
+  <li><%= link_to @current_user.name, retrospectives_path %> <span class="divider">/</span></li>
+  <li><%= link_to 'Retrospectivas', retrospectives_path %> <span class="divider">/</span></li>
+  <li><b><%= @retrospective.name %></b></li>
+</ul>
+<div class="alert alert-error hide" id="retrospectives-alert-error">
+  <button type="button" class="close" data-dismiss="alert">×</button>
+  <h4></h4>
+  <p></p>
+</div>
+<div class="alert alert-success hide" id="retrospectives-alert-success">
+  <button type="button" class="close" data-dismiss="alert">×</button>
+  <h4></h4>
+  <p></p>
+</div>
+<div class="row-fluid">
+  <div class="span12">
+    <div class="page-header">
+      <% if can_edit? %>
+        <div class="sprint-header">
+          <h3><%= @retrospective.name %></h3>
+          <%= link_to retrospective_send_email_path(@retrospective), :role => "button", :class => "btn btn-inverse btn-small btn-primary", "data-toggle" =>"modal" do %>
+            <span class="icon-envelope"></span>
+            Enviar
+          <% end %>
+        </div>
+      <% end %>
+      <% if @retrospective.start_at.present? %>
+        <b>Início</b> <em><%= @retrospective.start_at.strftime("%d/%m/%Y") %></em>
+        <b>Término</b> <em><%= @retrospective.finish_at.strftime("%d/%m/%Y") %></em>
+        <b> | Time</b> <em><%= @retrospective.team.name %></em> <br>
+        <b>Objetivo do sprint: </b> <em><%= (@retrospective.target) ? @retrospective.target : "Não possui objetivo" %></em>
+      <% end %>
+    </div>
+  </div><!--/div:span5 -->
+</div><!-- div:row -->
+<%= render 'list_worst' %>
+<div class="row-fluid list-goods-and-bads">
+  <div class="span6">
+    <h4><a href="#addBom" role="button" class="btn btn-small btn-success" data-toggle="modal">Bom</a></h4>
+    <table class="table goods_table" data-url="<%= retrospective_goods_path(@retrospective) %>">
+      <thead>
+        <tr>
+          <th>Descrição</th>
+          <th width="20"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render 'list_goods' %>
+      </tbody>
+    </table>
+  </div><!-- div:span6 -->
+  <div class="span6">
+    <h4><a href="#addRuim" role="button" class="btn btn-small btn-danger" data-toggle="modal">Ruim</a></h4>
+    <table class="table bads_table" data-url="<%= retrospective_bads_path(@retrospective) %>">
+      <thead>
+        <tr>
+          <th>Descrição</th>
+          <th>Ação</th>
+          <th width="20"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render 'list_bads' %>
+      </tbody>
+    </table>
+  </div><!-- div:span6 -->
+</div><!-- div:row -->
+
+<%= render 'new_good' %>
+<%= render 'new_bad' %>
+<%= render 'delete_goods' %>
+<%= render 'delete_bads' %>

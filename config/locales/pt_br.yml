@@ -1,0 +1,29 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+pt_br:
+  date:
+    formats:
+      default: "%d/%m/%Y"
+      short: "%d de %B"
+      long: "%d de %B de %Y"
+  activerecord:
+    errors:
+      models:
+        retrospective:
+          attributes:
+            target:
+              blank: "não pode ser vazio"
+        user:
+          attributes:
+            name:
+              blank: "não pode ser vazio"
+            team_id:
+              blank: "não pode ser vazio"
+            password:
+              blank: "bão pode ser vazio"
+              too_short: "deve ter mais que 4 caracteres!"
+              confirmation: "deve ser igual a confirmação!"
+            email:
+              taken: "já cadastrado!"
+              blank: "não pode ser vazio"
