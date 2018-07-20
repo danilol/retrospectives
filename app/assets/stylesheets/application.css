@@ -8,6 +8,8 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
+ *
+ *
  *= require_self
  *= require_tree .
  */
@@ -85,3 +87,12 @@ td.votes      { font-weight: bold; }
 .similar li .description { width: 77%; display: inline-block; vertical-align: top; }
 .similar li .description small { color: #333; }
 .retro_search input[type="submit"] { vertical-align: top; }
+
+.row-fluid .span2_5 {
+  width: 15.52991452991453%;
+  *width: 15.476723040552828%;
+}
+
+body {
+  padding-top: 60px;
+}
