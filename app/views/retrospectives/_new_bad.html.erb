@@ -1,16 +1,16 @@
 <%= form_for([@retrospective, @bad]) do |f| %>
   <%= f.hidden_field :retrospective_id, :value => @retrospective.id %>
-  <div id="addRuim" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div id="addBad" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-header">
       <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-      <h2>Ruim</h2>
+      <h2>Bad</h2>
     </div>
     <div class="modal-body">
       <% if @bad.errors.any? %>
         <div class="alert alert-error">
           <button type="button" class="close" data-dismiss="alert">×</button>
-          <h4>Atenção!</h4>
-          Os seguintes erros foram encontrados:
+          <h4>Attention!</h4>
+          A wild error appeared:
           <ul>
             <% @bad.errors.full_messages.each do |msg| %>
               <li><%= msg %></li>
@@ -19,18 +19,18 @@
         </div>
       <% end %>
       <div class="field">
-        <%= f.text_field :description, placeholder: 'Descrição', class: 'span5 description', autocomplete: 'off' %>
+        <%= f.text_field :description, placeholder: 'Description', class: 'span5 description', autocomplete: 'off' %>
       </div>
       <div class="well well-small similar bad">
         <button type="button" class="close">&times;</button>
         <ul class="nav nav-pills nav-stacked"></ul>
       </div>
       <div class="field">
-        <%= f.text_field :action, placeholder:"Ação", class: "span5" %>
+        <%= f.text_field :action, placeholder:"Action", class: "span5" %>
       </div>
     </div>
     <div class="modal-footer">
-      <%= f.submit "Salvar", class: "btn btn-primary" %>
+      <%= f.submit "Save", class: "btn btn-primary" %>
     </div>
   </div>
 <% end %>

@@ -1,6 +1,6 @@
 <ul class="breadcrumb">
   <li><%= link_to @current_user.name, retrospectives_path %> <span class="divider">/</span></li>
-  <li><b>Perfil</b></li>
+  <li><b>Role</b></li>
 </ul>
 <div class="row-fluid">
   <div class="span5">
@@ -14,8 +14,8 @@
       <% if @user.errors.any? %>
         <div class="alert alert-error">
           <button type="button" class="close" data-dismiss="alert">×</button>
-          <h4>Atenção!</h4>
-          Os seguintes erros foram encontrados:
+          <h4>Attention!</h4>
+          A wild error appeared:
           <ul>
           <% @user.errors.full_messages.each do |msg| %>
             <li><%= msg %></li>
@@ -25,7 +25,7 @@
       <% end %>
       <ul class="form">
         <li class="field">
-          <label>Nome </label>
+          <label>Name </label>
           <%= f.text_field :name, placeholder:"Nome", class: "span8" %>
         </li>
         <li class="field">
@@ -33,17 +33,17 @@
           <%= f.text_field :email, placeholder:"Email", class: "span8" %>
         </li>
         <li class="field">
-          <label>Time </label>
+          <label>Team </label>
           <%= f.collection_select(:team_id, @teams, :id, :name) %>
         </li>
         <% if @current_user.admin? %>
           <li class="field">
-            <label>Papel </label>
-            <%= select_tag("user[role]", options_for_select([ ['Selecione um nível', ''], ['Administrador', 'admin'], ['Líder de Time', 'team_leader'], ['PO', 'po'], ['Usuário', 'user'], ['CT', 'ct'], ['QA', 'qa'], ['Analista', 'analist'] ], @user.role))%>
+            <label>Role </label>
+            <%= select_tag("user[role]", options_for_select([ ['Select a role', ''], ['Admin', 'admin'], ['Team Leader', 'team_leader'], ['PO', 'po'], ['User', 'user'], ['QA', 'qa']], @user.role))%>
           </li>
         <% end %>
         <li class="field">
-          <%= f.submit "Salvar", class: "btn btn-primary btn-inverse" %>
+          <%= f.submit "Save", class: "btn btn-primary btn-inverse" %>
         </li>
       </ul>
     <% end %>

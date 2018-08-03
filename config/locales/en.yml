@@ -2,4 +2,28 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+  date:
+    formats:
+      default: "%d/%m/%Y"
+      short: "%d de %B"
+      long: "%d de %B de %Y"
+  activerecord:
+    errors:
+      models:
+        retrospective:
+          attributes:
+            target:
+              blank: "can't be empty"
+        user:
+          attributes:
+            name:
+              blank: "can't be empty"
+            team_id:
+              blank: "can't be empty"
+            password:
+              blank: "can't be empty"
+              too_short: "needs to be bigger than 4!"
+              confirmation: "must match the confirmation!"
+            email:
+              taken: "already exists!"
+              blank: "can't be empty"

@@ -2,14 +2,14 @@
     <div id="newRetro" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-header">
       <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-      <h2>Nova Retrospectiva</h2>
+      <h2>New Retrospective</h2>
     </div>
     <div class="modal-body">
         <% if @retrospective.errors.any? %>
           <div class="alert alert-error">
             <button type="button" class="close" data-dismiss="alert">×</button>
-            <h4>Atenção!</h4>
-            Os seguintes erros foram encontrados:
+            <h4>Attention!</h4>
+            A wild error appeared:
             <ul>
               <% @retrospective.errors.full_messages.each do |msg| %>
                 <li><%= msg %></li>
@@ -18,7 +18,7 @@
           </div>
         <% end %>
         <div class="field">
-          <span class="span3">Descrição</span>
+          <span class="span3">Description</span>
         </div>
         <div class="field">
           <div class="span3 input-append">
@@ -26,7 +26,7 @@
           </div>
         </div>
         <div class="field">
-          <span class="span3">Objetivo do sprint</span>
+          <span class="span3">Sprint goal</span>
         </div>
         <div class="field">
           <div class="span3 input-append">
@@ -34,7 +34,7 @@
           </div>
         </div>
         <div class="field">
-          <span class="span3">Time</span>
+          <span class="span3">Team</span>
         </div>
         <div class="field">
           <div class="span3 input-append">
@@ -42,8 +42,8 @@
           </div>
         </div>
         <div class="field">
-          <span class="span3">Data inicio</span>
-          <span class="span2">Data final</span>
+          <span class="span3">Start Date</span>
+          <span class="span2">End Date</span>
         </div>
         <div class="field">
           <div class="span3 input-append">
@@ -57,7 +57,7 @@
         </div>
     </div>
     <div class="modal-footer">
-      <%= f.submit "Salvar", class: "btn btn-primary" %>
+      <%= f.submit "Save", class: "btn btn-primary" %>
     </div>
   </div>
 <% end %>

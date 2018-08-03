@@ -1,19 +1,19 @@
 <ul class="breadcrumb">
   <li><%= link_to @current_user.name, users_path %> <span class="divider">/</span></li>
-  <li><%= link_to "Retrospectivas", user_retrospectives_path(@current_user) %> <span class="divider">/</span></li>
-  <li><b>Nova</b></li>
+  <li><%= link_to "Retrospectives", user_retrospectives_path(@current_user) %> <span class="divider">/</span></li>
+  <li><b>New</b></li>
 </ul>
 
 <div class="page-header">
-  <h3>Nova Retrospectiva</h3>
+  <h3>New Retrospective</h3>
 </div>
 <%= form_for(@retrospective, html: {class: "nav-form"}) do |f| %>
 
   <% if @retrospective.errors.any? %>
     <div class="alert alert-error">
       <button type="button" class="close" data-dismiss="alert">×</button>
-      <h4>Atenção!</h4>
-      Os seguintes erros foram encontrados:
+      <h4>Attention!</h4>
+      A wild problem appeared!
       <ul>
       <% @retrospective.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>

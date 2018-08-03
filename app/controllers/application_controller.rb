@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
   def ensure_authentication
     if not session[:user_id]
-      redirect_to root_url, :notice => "Você esqueceu de fazer o login!"
+      redirect_to root_url, :notice => "You forgot to log in!"
     else
       @current_user = current_user
     end

@@ -70,7 +70,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
 
     if @user.save
-      flash[:notice] = 'Seu usuário foi criado com sucesso!'
+      flash[:notice] = "Your profile was succesfully created!"
       redirect_to root_path
     else
       flash[:error] = "Less!! #{@user.errors.full_messages}"
@@ -86,7 +86,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.update_attributes(params[:user])
-        format.html { redirect_to "/retrospectives", notice: 'Seu dados foram atualizados!' }
+        format.html { redirect_to "/retrospectives", notice: "Your profile was succesfully updated!" }
       else
         format.html { render action: "edit" }
       end
@@ -98,21 +98,21 @@ class UsersController < ApplicationController
 
     if user
       session[:user_id] = user.id
-      redirect_to "/retrospectives", notice: "Olá #{user.name}, bem vindo ao Retrospectiba!"
+      redirect_to "/retrospectives", notice: "Hello #{user.name}, welcome to Retrospectiba!"
     else
-      redirect_to root_url, notice: 'Usuário ou senha inválida'
+      redirect_to root_url, notice: 'Wrong login or password'
     end
   end
 
   def logout
     session[:user_id] = nil
-    redirect_to root_url, :alert => "Obrigado por ter usado o Retrospectiba!"
+    redirect_to root_url, :alert => "Thanks for using Retrospectiba!"
   end
 
   def ensure_correct_user
-    raise TentandoSerEspertaoException  if !current_user.admin? && session[:user_id].to_s != params[:id].to_s
+    raise TryingToBeSmartException  if !current_user.admin? && session[:user_id].to_s != params[:id].to_s
   end
 
-  class TentandoSerEspertaoException < StandardError
+  class TryingToBeSmartException < StandardError
   end
 end

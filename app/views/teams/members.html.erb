@@ -1,19 +1,19 @@
 <ul class="breadcrumb">
   <li><%= link_to @current_user.name, users_path %> <span class="divider">/</span></li>
-  <li><b>Usuários</b></li>
+  <li><b>Users</b></li>
 </ul>
 <div class="row-fluid">
   <div class="span6">
     <div class="page-header">
-      <h3>Usuários</h3>
+      <h3>Users</h3>
     </div>
     <table class="table table-hover">
       <thead>
         <tr>
-          <th>Nome</th>
+          <th>Name</th>
           <th>Email</th>
-          <th>Time</th>
-          <th>Papel</th>
+          <th>Team</th>
+          <th>Role</th>
         </tr>
       </thead>
       <tbody>
@@ -27,7 +27,6 @@
         <% end %>
       </tbody>
     </table>
-    <!--  <a href="#newUser" role="button" class="btn btn-inverse btn-large" data-toggle="modal">Novo usuário</a> -->
     <br />
 
   </div><!-- div:span6 -->

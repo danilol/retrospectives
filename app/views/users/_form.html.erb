@@ -3,8 +3,8 @@
   <% if @user.errors.any? %>
     <div class="alert alert-error">
       <button type="button" class="close" data-dismiss="alert">×</button>
-      <h4>Atenção!</h4>
-      Os seguintes erros foram encontrados:
+      <h4>Attention!</h4>
+      A wild error appeared:
       <ul>
       <% @user.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -15,30 +15,30 @@
 
   <ul class="form">
     <li class="field">
-      <label>Nome </label>
-      <%= f.text_field :name, placeholder:"Nome", class: "span8" %>
+      <label>Name </label>
+      <%= f.text_field :name, placeholder:"Name", class: "span8" %>
     </li>
     <li class="field">
       <label>Email </label>
       <%= f.text_field :email, placeholder:"Email", class: "span8" %>
     </li>
     <li class="field">
-      <label>Time </label>
+      <label>Team </label>
       <%= f.collection_select(:team_id, @teams, :id, :name) %>
     </li>
     <li class="field">
-      <label>Senha </label>
-      <%= f.password_field :password, placeholder:"Senha", class: "password_field" %>
+      <label>Password </label>
+      <%= f.password_field :password, placeholder:"Password", class: "password_field" %>
     </li>
     <li class="field">
-      <label>Confirmação de Senha </label>
-      <%= f.password_field :password_confirmation, placeholder:"Confirmação", class: "password_field" %>
+      <label>Password Confirmation</label>
+      <%= f.password_field :password_confirmation, placeholder:"Confirmation", class: "password_field" %>
     </li>
 
     <%= f.hidden_field :role, value: "user" %>
 
     <li class="field">
-      <%= f.submit "Salvar", class: "btn btn-primary btn-inverse" %>
+      <%= f.submit "Save", class: "btn btn-primary btn-inverse" %>
     </li>
   </ul>
 <% end %>

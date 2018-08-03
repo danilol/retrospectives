@@ -1,4 +1,4 @@
-<li class="legend">Itens similares:</li>
+<li class="legend">Similar Itens:</li>
 <% @retro_items.each do |item, quantity| %>
   <% class_name = item.class.to_s.downcase %>
   <li class="item" data-id="<%= "#{class_name}-#{item.id}" %>">

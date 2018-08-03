@@ -1,18 +1,18 @@
 <ul class="breadcrumb">
   <li><%= link_to @current_user.name, users_path %> <span class="divider">/</span></li>
-  <li><b>Times</b></li>
+  <li><b>Teams</b></li>
 </ul>
 <div class="row-fluid">
   <div class="span6">
     <div class="page-header">
-      <h3>Times</h3>
+      <h3>Teams</h3>
     </div>
     <table class="table table-hover">
       <thead>
         <tr>
-          <th>Nome</th>
-          <th>Líder</th>
-          <th>Membros</th>
+          <th>Name</th>
+          <th>Leader</th>
+          <th>Members</th>
         </tr>
       </thead>
       <tbody>
@@ -20,12 +20,12 @@
           <tr>
             <td><%= link_to team.name, edit_team_path(team.id) %></td>
             <td><%= team_leader_name(team) %></td>
-            <td><%= link_to "Membros", show_members_path(team) %></td>
+            <td><%= link_to "Members", show_members_path(team) %></td>
           </tr>
         <% end %>
       </tbody>
     </table>
-    <%= link_to "Novo Time", new_team_path, class: "btn btn-inverse btn-large" %>
+    <%= link_to "New Team", new_team_path, class: "btn btn-inverse btn-large" %>
     <br />
 
   </div><!-- div:span6 -->

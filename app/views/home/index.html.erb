@@ -25,13 +25,13 @@
             <div class="span3"><img src="/assets/homer.png" title="Doh!"/> </div>
             <div class="span9">
               <h1>Retrospectiba</h1>
-              <h2>Não esqueça o que rolou na última retro!</h1>
+              <h2>Don't forget what happened last retrospective!</h1>
               <form class="form-inline" action="/signin" method="POST">
                 <legend></legend>
                 <% if flash[:notice] %>
                   <div class="alert alert-info">
                     <button type="button" class="close" data-dismiss="alert">x</button>
-                    <h4>Obrigado!</h4>
+                    <h4>Ooops!</h4>
                     <%=flash[:notice]%>
                   </div>
                 <% end %>
@@ -55,12 +55,12 @@
                 </div><!-- div.control-group -->
                 <div class="control-group">
                   <div class="controls">
-                    <span class="help-block">Lembrar senha <%= link_to 'Clique aqui', remember_password_path %>.</span>
+                    <span class="help-block">Forgot Password <%= link_to 'Click here', remember_password_path %>.</span>
                   </div><!-- div.controls -->
                 </div><!-- div.control-group -->
                 <div class="control-group">
                   <div class="controls">
-                    <span class="help-block">Não tenho uma conta, mas quero me <%= link_to 'cadastrar', signup_path %>.</span>
+                    <span class="help-block">I don't have an account, but want to <%= link_to 'sign up', signup_path %>.</span>
                   </div><!-- div.controls -->
                 </div><!-- div.control-group -->
               </form>

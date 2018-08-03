@@ -26,7 +26,7 @@ class TeamsController < ApplicationController
     @users = User.order(:name)
     respond_to do |format|
       if @team.save
-        format.html { redirect_to teams_path, notice: 'Seu time foi criado!' }
+        format.html { redirect_to teams_path, notice: "Your team was created!" }
       else
         format.html { render action: "new", layout: false }
       end
@@ -43,7 +43,7 @@ class TeamsController < ApplicationController
     @team = Team.find(params[:id])
     respond_to do |format|
       if @team.update_attributes(params[:team])
-        format.html { redirect_to teams_path, notice: 'Seu time foi alterado!' }
+        format.html { redirect_to teams_path, notice: "Your team was updated!" }
       else
         format.html { render action: "edit", layout: false }
       end

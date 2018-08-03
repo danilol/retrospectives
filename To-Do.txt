@@ -1,7 +1,3 @@
-- Incluir lista de times na criação de usuário (frontend task) - DONE
-- Lembrar senha - DONE
-- Definir objetivo para o próximo sprint - DONE
-- Setar usuario como admin via tela - DONE
 - Incluir mecanismo de fechar e abrir retro.
 - Ocultar os bads e goods dos outros usuários enquanto a retro estiver fechada
 - Liberar bads e goods quando a retro tiver fechada

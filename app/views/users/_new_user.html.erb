@@ -2,13 +2,14 @@
   <div id="newUser" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-header">
       <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-      <h2>Novo Usuário</h2>
+      <h2>New User</h2>
     </div>
     <div class="modal-body">
     <% if @new_user.errors.any? %>
       <div class="alert alert-error">
         <button type="button" class="close" data-dismiss="alert">×</button>
-        <h4>Atenção!</h4>Os seguintes erros foram encontrados:
+        <h4>Attention!</h4>
+        A wild error appeared:
           <ul>
           <% @new_user.errors.full_messages.each do |msg| %>
             <li><%= msg %></li>
@@ -17,7 +18,7 @@
       </div>
     <% end %>
       <div class="field">
-        <span class="span3">Nome</span>
+        <span class="span3">Name</span>
       </div>
       <div class="field">
         <div class="span3 input-append">
@@ -33,7 +34,7 @@
         </div>
       </div>
       <div class="field">
-        <span class="span3">Time</span>
+        <span class="span3">Team</span>
       </div>
       <div class="field">
         <div class="span3 input-append">
@@ -41,7 +42,7 @@
         </div>
       </div>
       <div class="field">
-        <span class="span3">Senha</span>
+        <span class="span3">Password</span>
       </div>
       <div class="field">
         <div class="span3 input-append">
@@ -50,7 +51,7 @@
       </div>
     </div>
     <div class="modal-footer">
-      <%= u.submit "Salvar", class: "btn btn-primary" %>
+      <%= u.submit "Save", class: "btn btn-primary" %>
     </div>
   </div>
 <% end %>

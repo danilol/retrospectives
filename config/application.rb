@@ -39,7 +39,7 @@ module RetroRails
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
-    config.i18n.default_locale = :pt_br
+    config.i18n.default_locale = :en
 
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"
@@ -50,7 +50,7 @@ module RetroRails
     # Enable escaping HTML in JSON.
     config.active_support.escape_html_entities_in_json = true
     config.time_zone = 'UTC'
-    config.time_zone = 'Brasilia'
+    config.time_zone = 'Berlin'
     # Use SQL instead of Active Record's schema dumper when creating the database.
     # This is necessary if your schema can't be completely dumped by the schema dumper,
     # like if you have constraints or database-specific column types

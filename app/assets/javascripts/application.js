@@ -14,7 +14,7 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require jquery_ui_1_10_2
-//= require jquery_ui_datepicker_pt_BR
+//= require jquery_ui_datepicker_en
 //= require best_in_place
 
 jQuery(function($) {
