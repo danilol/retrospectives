@@ -182,7 +182,7 @@ GEM
       actionpack (>= 3.1)
       execjs
       railties (>= 3.1)
-    tzinfo (0.3.54)
+    tzinfo (0.3.61)
     uglifier (4.1.15)
       execjs (>= 0.3.0, < 3)
 
